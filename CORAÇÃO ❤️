@@ -1,0 +1,26 @@
+let sound;
+let button;
+
+function preload() {
+    sound = loadSound('assets/sound.mp3'); // Coloque o arquivo de som na pasta "assets"
+}
+
+function setup() {
+    createCanvas(400, 400);
+    background(200);
+
+    button = createButton('Play Sound');
+    button.position(150, 450);
+    button.mousePressed(playSound);
+}
+
+function draw() {
+    fill(50, 100, 200);
+    ellipse(width / 2, height / 2, 100, 100);
+}
+
+function playSound() {
+    if (!sound.isPlaying()) {
+        sound.play();
+    }
+}
